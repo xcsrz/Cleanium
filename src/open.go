@@ -50,7 +50,7 @@ func open_macos() {
 		// now that we have a fresh new instance, let's exec to chrome/chromium
 		userdir = os.Getenv("BROWSER_USER_DIR")
 		path := findBrowserPath()
-		args := []string{path, "--user-data-dir=" + userdir, "--no-first-run"}
+		args := []string{path, "--user-data-dir=" + userdir, "--no-first-run", "--no-default-browser-check"}
 
 		for _, arg := range os.Args[1:] {
 			args = append(args, arg)
