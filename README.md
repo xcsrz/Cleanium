@@ -13,7 +13,7 @@ The end result is each time you click/open Cleanium you get a brand new fresh br
 
 ### Installation
 
-1. Download the lastest version, `1.0.1`, [here](https://github.com/xcsrz/Cleanium/releases/tag/v1.0.1)
+1. Download the lastest version from the [Releases page](https://github.com/xcsrz/Cleanium/releases)
     - The `arm64` file is correct for all newer macs
     - The `amd64` file is the one if you're on an older "intel" mac
 2. Unzip the file and move the `Cleanium` app (or `Cleanium.app` on the command line) to your application folder of choice
