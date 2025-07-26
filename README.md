@@ -1,5 +1,7 @@
 # Cleanium
 
+![Cleanium Icon](icon/Icon.iconset/icon_256x256.png)
+
 ## When Private/Incognito just won't do!
 
 This is a wrapper for Chrome/Chromium which takes advantage of the feature to specify a specific data directory.  Each time this app is launched it:
