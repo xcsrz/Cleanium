@@ -1,3 +1,3 @@
-module github.com/xcsrz/CleanBrowser
+module github.com/xcsrz/Cleanium
 
 go 1.18

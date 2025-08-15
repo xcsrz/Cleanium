@@ -44,7 +44,7 @@ func open_macos() {
 		}
 		err := syscall.Exec("/usr/bin/open", []string{"-a", path.Join(appPath...), "--new"}, append(buildEnv(), "BROWSER_USER_DIR="+userdir))
 		if err != nil {
-			bomb("Could not reopen CleanBrowse: " + err.Error())
+			bomb("Could not reopen Cleanium: " + err.Error())
 		}
 	} else {
 		// now that we have a fresh new instance, let's exec to chrome/chromium
