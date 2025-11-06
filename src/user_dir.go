@@ -10,7 +10,7 @@ func userDir() string {
 	if tmpdir == "" {
 		tmpdir = "/tmp"
 	}
-	dir, err := ioutil.TempDir(tmpdir, "cleanium")
+	dir, err := ioutil.TempDir(tmpdir, APP_NAME)
 	if err != nil {
 		bomb("Could not create a clean temporary directory.")
 	}

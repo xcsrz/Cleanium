@@ -6,5 +6,10 @@
   <string>Cleanium</string>
   <key>CFBundleIconFile</key>
   <string>Icon</string>
+  <key>LSEnvironment</key>
+  <dict>
+    <key>APP_URL</key>
+    <string></string>
+  </dict>
 </dict>
 </plist>

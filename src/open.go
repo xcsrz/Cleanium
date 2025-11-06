@@ -44,7 +44,7 @@ func open_macos() {
 		}
 		err := syscall.Exec("/usr/bin/open", []string{"-a", path.Join(appPath...), "--new"}, append(buildEnv(), "BROWSER_USER_DIR="+userdir))
 		if err != nil {
-			bomb("Could not reopen Cleanium: " + err.Error())
+			bomb("Could not reopen " + APP_NAME + ": " + err.Error())
 		}
 	} else {
 		// now that we have a fresh new instance, let's exec to chrome/chromium
@@ -52,8 +52,10 @@ func open_macos() {
 		path := findBrowserPath()
 		args := []string{path, "--user-data-dir=" + userdir, "--no-first-run", "--no-default-browser-check"}
 
-		for _, arg := range os.Args[1:] {
-			args = append(args, arg)
+		args = append(args, os.Args[1:]...)
+
+		if os.Getenv("APP_URL") != "" {
+			args = append(args, os.Getenv("APP_URL"))
 		}
 
 		err := syscall.Exec(path, args, buildEnv())

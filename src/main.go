@@ -6,12 +6,16 @@ import (
 )
 
 var (
-	DEBUG = false
+	DEBUG    = false
+	APP_NAME = "Cleanium"
 )
 
 func init() {
 	if os.Getenv("DEBUG") != "" {
 		DEBUG = true
+	}
+	if os.Getenv("APP_NAME") != "" {
+		APP_NAME = os.Getenv("APP_NAME")
 	}
 }
 
@@ -28,6 +32,6 @@ func main() {
 }
 
 func bomb(message string) {
-	log.Fatalln("ERROR IN CLEANIUM:", message)
+	log.Fatalln("ERROR IN ", APP_NAME+":", message)
 	os.Exit(1)
 }
