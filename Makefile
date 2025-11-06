@@ -26,7 +26,7 @@ define scaffold_arch
 	cp -R Info.plist build/macos/$(1)/$(APP_NAME).app/Contents/
 	$(SED_INPLACE) 's/Cleanium/$(APP_NAME)/g' build/macos/$(1)/$(APP_NAME).app/Contents/Info.plist
 	$(if $(APP_URL),$(SED_INPLACE) 's|<string></string>|<string>$(APP_URL)</string>|' build/macos/$(1)/$(APP_NAME).app/Contents/Info.plist)
-	cp -R icon/* build/macos/$(1)/$(APP_NAME).app/Contents/Resources/
+	$(if $(APP_ICON),cp $(APP_ICON) build/macos/$(1)/$(APP_NAME).app/Contents/Resources/Icon.icns,cp -R icon/Icon.icns build/macos/$(1)/$(APP_NAME).app/Contents/Resources/)
 endef
 
 scaffold:

@@ -25,6 +25,42 @@ The end result is each time you click/open Cleanium you get a brand new fresh br
 xattr -d com.apple.quarantine /path/to/Cleanium.app
 ```
 
+### Custom Builds
+
+Cleanium can be customized to create specialized versions for specific use cases. The build system supports the following variables:
+
+#### APP_NAME
+Specifies a custom name for the application bundle. This changes both the `.app` bundle name and the executable name.
+
+**Example:**
+```bash
+APP_NAME=MyCustomBrowser make build
+```
+
+#### APP_URL
+Sets a default URL that will be opened when the browser launches. This is useful for creating purpose-built browsers for specific web applications.
+
+**Example:**
+```bash
+APP_NAME=MailBrowser APP_URL=https://mail.google.com make build
+```
+
+#### APP_ICON
+Specifies a custom `.icns` icon file to use instead of the default Cleanium icon. The icon will be copied as `Icon.icns` in the app bundle.
+
+**Example:**
+```bash
+APP_NAME=WorkBrowser APP_ICON=/path/to/custom-icon.icns make build
+```
+
+#### Combined Example
+Create a fully customized browser:
+```bash
+APP_NAME=AnonyGPT APP_URL=https://chatgpt.com APP_ICON=~/Downloads/AIbot.icns make build-release
+```
+
+This creates a specialized cleanium browser with the same zero history or connection to your normal Chome browser as Cleanium, but named "AnonyGPT" and opens ChatGPT on each launch in a new window with a custom AI themed icon to help you tell the difference.
+
 ### Settings
 
 A development machine generally has lots of browsers installed and may have multiple versions of Chrome and Chromium installed.  Currently the only setting is the `BROWSER_USER_DIR` environment variable.  Specifying a path here to a version of chrome/chromium on your hard drive enables the use of multiple/different browser versions as needed.  
